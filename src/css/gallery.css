@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+li{
+  list-style: none;
+}
+p {
+  margin: 0;
+}
+h1,h2 {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+img {
+  display: block;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 156px;
+}
+.gallery-image{
+  transition: all 0.3s ease;
+}
+.gallery-image:hover{
+  width: 376px;
+  height: 208px;
+}
+
+.modal-image{
+  width: 1112px;
+  height: 640px;
+}
