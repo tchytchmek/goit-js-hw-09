@@ -1,5 +1,5 @@
 import SimpleLightbox from "simplelightbox";
-
+import "simplelightbox/dist/simple-lightbox.min.css";
 const images = [
   {
     preview: 'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
@@ -70,34 +70,9 @@ const gallery = document.querySelector('.gallery');
 gallery.insertAdjacentHTML("beforeend" , makeHtml(images));
 
 let lightbox = new SimpleLightbox('.gallery-link', { 
-    captionsData: 'alt'
+    captionsData: 'alt',
+    captionDelay: 250,
 });
-  // gallery.addEventListener('click' ,handleClick);
-
-// function handleClick(event){
-//    event.preventDefault();
-//    if(event.target === event.currentTarget){
-//     return;
-//    }
-//    console.log(event.target.alt);
-//    const myImg = images.find(({description}) => description === event.target.alt);
-
-//    const instance = basicLightbox.create(`
-// <div class="modal">
-// 	<img
-//       class="modal-image"
-//       src="${myImg.original}"
-//       alt="${myImg.description}"
-//     />
-// </div>
-// `)
-//    instance.show();
-// }
-
-
-// const img = document.querySelectorAll('.gallery-image');
-
-// img.forEach((item) => item.addEventListener('click', (element) => {element.preventDefault();}))
 
 function makeHtml(array){
   return array.map(({preview, original, description}) => {
