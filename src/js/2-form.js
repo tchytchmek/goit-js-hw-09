@@ -53,7 +53,7 @@ function handleInput(event){
 function handleSubmit(event){
     event.preventDefault();
     const elements = event.currentTarget.elements;
-    if(!elements.email || !elements.message){
+    if(!elements.email.value || !elements.message.value){
       alert('Fill please all fields');
     }else{
     localStorage.removeItem(LS_KEY);
