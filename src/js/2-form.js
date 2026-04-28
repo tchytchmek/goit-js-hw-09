@@ -16,19 +16,18 @@ form.addEventListener('submit', handleSubmit);
 populateForm();
 
 function populateForm(){
-  let putEmail;
-  let putMessage;
   try{
-   putEmail = JSON.parse(localStorage.getItem(LS_KEY)).email;
-   putMessage = JSON.parse(localStorage.getItem(LS_KEY)).message;
+   formData.email = JSON.parse(localStorage.getItem(LS_KEY)).email;
+   formData.message = JSON.parse(localStorage.getItem(LS_KEY)).message;
    }catch(e){
     localStorage.setItem(LS_KEY, JSON.stringify(formData));
    }
-   if(putEmail){
-    email.value = putEmail;
+   
+   if(formData.email){
+    email.value = formData.email;
    }
-   if(putMessage){
-    message.value = putMessage;
+   if(formData.message){
+    message.value = formData.message;
    }
 }
 
@@ -57,6 +56,8 @@ function handleSubmit(event){
       alert('Fill please all fields');
     }else{
     localStorage.removeItem(LS_KEY);
+
+    console.log(formData);
 
     formData.email = "";
     formData.message = "";
